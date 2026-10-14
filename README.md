@@ -43,7 +43,7 @@ flowchart TB
 ### Bentuk ke 2
 ```mermaid
 
-flowchart TD
+flowchart LR
     Start((mulai))
 
     I[i = 1]
