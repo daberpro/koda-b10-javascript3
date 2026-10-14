@@ -8,3 +8,14 @@ for(let i = 0; i < 5; i++){
     hasil += str;
 }
 console.log(hasil);
+
+let hasil2 = "";
+for(let i = 1; i <= 5; i++){
+    let str = "";
+    for(let j = 0; j < i; j++){
+        str += "*";
+    }
+    str += "\n";
+    hasil2 += str;
+}
+console.log(hasil2);
