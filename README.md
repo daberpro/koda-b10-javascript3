@@ -82,3 +82,68 @@ flowchart LR
     CetakHasil --> End
 
 ```
+
+# PR
+### Segitiga Sama Kaki
+```mermaid
+
+flowchart LR
+
+    Start((mulai))
+
+    I[i = 1]
+    J[j = 5 - i]
+    K[k = 1]
+
+    CekI{i <= 5}
+    CekJ{j > 0}
+    CekK{k <= i}
+
+    TambahI[i++]
+    KurangJ[j--]
+    TambahK[k++]
+
+    Hasil[hasil = #quot;#quot;]
+    Spasi[spasi = #quot;#quot;]
+    Bintang[bintang = #quot;#quot;]
+
+    CekKGenap{k % 2 == 0}
+
+    ConcatSpasi[spasi += #quot; #quot;]
+    ConcatBintangBintang[bintang += #quot;*#quot;]
+    ConcatBintangSpasi[bintang += #quot; * #quot;]
+
+    ConcatSpasiDanBintangKeHasil[hasil = spasi + bintang + #quot;#92;n#quot;]
+
+    CetakHasil[/hasil/]
+
+    End(((selesai)))
+
+    Start --> Hasil 
+    Hasil --> I
+    I --> CekI
+
+    CekI --> |yes| Spasi
+    Spasi --> J
+    J -->  CekJ
+
+    CekJ --> |yes| ConcatSpasi 
+    ConcatSpasi --> KurangJ
+    KurangJ --> CekJ
+    CekJ --> |no| Bintang
+
+    Bintang --> K
+    K --> CekK
+    CekK --> |yes| CekKGenap
+    CekKGenap --> |yes| ConcatBintangSpasi
+    CekKGenap --> |no| ConcatBintangBintang
+    ConcatBintangSpasi & ConcatBintangBintang  --> TambahK
+    TambahK --> CekK
+    CekK --> |no| ConcatSpasiDanBintangKeHasil
+    ConcatSpasiDanBintangKeHasil --> TambahI
+
+    TambahI --> CekI
+    CekI --> |no| CetakHasil
+    CetakHasil --> End
+
+```
