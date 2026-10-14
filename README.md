@@ -39,3 +39,48 @@ flowchart TB
     CetakHasil --> End
 
 ```
+
+### Bentuk ke 2
+```mermaid
+
+flowchart TD
+    Start((mulai))
+
+    I[i = 1]
+    J[j = 0]
+
+    TambahI[i++]
+    TambahJ[j++]
+
+    CekI{i <= 5}
+    CekJ{j < i}
+
+    Hasil[hasil = #quot;#quot;]
+    TempStr[str = #quot;#quot;]
+    ConcatStr[str += #quot;*#quot;]
+    ConcatStrBreak[str += #92;n]
+    ConcatStrHasil[hasil += str]
+
+    End(((selesai)))
+
+    Start --> Hasil
+    Hasil --> I
+    I --> CekI
+    
+    CekI --> |yes| TempStr
+    TempStr --> J
+    J --> CekJ
+
+    CekJ --> |yes| ConcatStr
+    ConcatStr --> TambahJ
+    TambahJ --> CekJ
+
+    CekJ --> |no| ConcatStrBreak
+    ConcatStrBreak --> ConcatStrHasil
+
+    ConcatStrHasil --> TambahI
+    TambahI --> CekI
+
+    CekI --> |no| End
+
+```
