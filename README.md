@@ -1,6 +1,6 @@
 ```mermaid
 
-flowchart TB
+flowchart LR
     Start((mulai))
 
     I[i = 0]
