@@ -58,7 +58,7 @@ flowchart LR
     Hasil[hasil = #quot;#quot;]
     TempStr[str = #quot;#quot;]
     ConcatStr[str += #quot;*#quot;]
-    ConcatStrBreak[str += #92;n]
+    ConcatStrBreak[str += #quot;#92;n#quot;]
     ConcatStrHasil[hasil += str]
 
     CetakHasil[/hasil/]
