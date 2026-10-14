@@ -13,6 +13,7 @@ flowchart TB
     Str[str = #quot;#quot;]
     ConcatBintangStr[str += #quot;*#quot;]
     ConcatBreakStr[str += #quot;#92;n#quot;]
+    ConcatStrHasil[hasil += str]
     CekI{i < 5}
     CekJ{j < 5} 
     CetakHasil[/hasil/]
@@ -30,7 +31,8 @@ flowchart TB
     TambahJ --> CekJ
 
     CekJ --> |no| ConcatBreakStr
-    ConcatBreakStr --> TambahI
+    ConcatBreakStr --> ConcatStrHasil
+    ConcatStrHasil --> TambahI
     TambahI --> CekI
 
     CekI --> |no| CetakHasil
