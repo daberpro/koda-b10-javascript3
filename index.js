@@ -1,6 +1,6 @@
-hasil = "";
+let hasil = "";
 for(let i = 0; i < 5; i++){
-    str = "";
+    let str = "";
     for(let j = 0; j < 5; j++){
         str += "*";
     }
