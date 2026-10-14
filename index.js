@@ -9,11 +9,11 @@ for(let i = 0; i < 5; i++){
 }
 console.log(hasil);
 
-let hasil2 = "";
+hasil = "";
 for(let i = 1; i <= 5; i++){
     for(let j = 0; j < i; j++){
-        hasil2 += "*";
+        hasil += "*";
     }
-    hasil2 += "\n";
+    hasil += "\n";
 }
-console.log(hasil2);
+console.log(hasil);
