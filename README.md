@@ -43,7 +43,7 @@ flowchart LR
 # Bentuk ke 2
 ```mermaid
 
-flowchart LR
+flowchart TD
     Start((mulai))
 
     I[i = 1]
@@ -56,11 +56,9 @@ flowchart LR
     CekJ{j < i}
 
     Hasil[hasil = #quot;#quot;]
-    TempStr[str = #quot;#quot;]
-    ConcatStr[str += #quot;*#quot;]
-    ConcatStrBreak[str += #quot;#92;n#quot;]
-    ConcatStrHasil[hasil += str]
-
+    ConcatStr[hasil += #quot;*#quot;]
+    ConcatStrBreak[hasil += #quot;#92;n#quot;]
+    
     CetakHasil[/hasil/]
 
     End(((selesai)))
@@ -69,8 +67,7 @@ flowchart LR
     Hasil --> I
     I --> CekI
     
-    CekI --> |yes| TempStr
-    TempStr --> J
+    CekI --> |yes| J
     J --> CekJ
 
     CekJ --> |yes| ConcatStr
@@ -78,9 +75,7 @@ flowchart LR
     TambahJ --> CekJ
 
     CekJ --> |no| ConcatStrBreak
-    ConcatStrBreak --> ConcatStrHasil
-
-    ConcatStrHasil --> TambahI
+    ConcatStrBreak --> TambahI
     TambahI --> CekI
 
     CekI --> |no| CetakHasil
