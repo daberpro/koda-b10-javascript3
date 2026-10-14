@@ -40,7 +40,6 @@ flowchart TB
 
 ```
 
-### Bentuk ke 2
 ```mermaid
 
 flowchart LR
@@ -60,6 +59,8 @@ flowchart LR
     ConcatStr[str += #quot;*#quot;]
     ConcatStrBreak[str += #92;n]
     ConcatStrHasil[hasil += str]
+
+    CetakHasil[/hasil/]
 
     End(((selesai)))
 
@@ -81,6 +82,7 @@ flowchart LR
     ConcatStrHasil --> TambahI
     TambahI --> CekI
 
-    CekI --> |no| End
+    CekI --> |no| CetakHasil
+    CetakHasil --> End
 
 ```
