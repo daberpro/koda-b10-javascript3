@@ -147,3 +147,56 @@ flowchart LR
     CetakHasil --> End
 
 ```
+### Keliling Persegi
+
+```mermaid
+
+flowchart LR
+    Start((mulai))
+
+    Hasil[hasil = #quot;#quot;]
+
+    I[i = 0]
+    J[j = 0]
+
+    CekI{i < 5}
+    CekJ{j < 5 - 2}
+
+    TambahI[i++]
+    TambahJ[j++]
+
+
+    ConcatBintangBintangSebelum[hasil += #quot;*#quot;]
+    ConcatBintangSpasi[hasil += #quot; #quot;]
+    ConcatBintangBintangLoop[hasil += #quot;*#quot;]
+    ConcatBintangBintangSesudah[hasil += #quot;*#92;n#quot;]
+
+    CetakHasil[/hasil/]
+
+    CekNilaiAwalAtauAkhir{"i == 0 || i == 4"}
+
+    End(((selesai)))
+
+    Start --> Hasil
+    Hasil --> I
+    I --> CekI
+
+    CekI --> |yes| J
+    J --> CekJ
+
+    CekJ --> |yes| ConcatBintangBintangSebelum 
+    ConcatBintangBintangSebelum --> CekNilaiAwalAtauAkhir
+    CekNilaiAwalAtauAkhir --> |yes| ConcatBintangBintangLoop
+    CekNilaiAwalAtauAkhir --> |no| ConcatBintangSpasi
+    ConcatBintangBintangLoop & ConcatBintangSpasi --> TambahJ 
+    TambahJ --> ConcatBintangBintangSesudah
+    ConcatBintangBintangSesudah --> CekJ
+
+    CekJ --> |no| TambahI
+    TambahI --> CekI
+
+    CekI --> |no| CetakHasil
+    CetakHasil --> End
+
+
+```
