@@ -40,6 +40,7 @@ flowchart TB
 
 ```
 
+# Bentuk ke 2
 ```mermaid
 
 flowchart LR
